@@ -1,0 +1,22 @@
+.action{
+    display: flex;
+    justify-items: center;
+    width: 10%;
+}
+.btn{
+    height: 50%;
+    margin: 1px;
+}
+.cart{
+    display: flex;
+}
+.cart-item{
+    padding: 30px;
+}
+.table{
+    padding: 20px;
+    width: 90%;
+}
+.btn-action{
+    display: flex;
+}
