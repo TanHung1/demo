@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../Style/cart.css";
-const ListShoes = () => {
+import "../Style/List.css";
+function ListShoes() {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3030/data_shoes").then((response) => {
-      setShoes(response.data);
-    });
+    axios
+      .get("http://localhost:3030/data_shoes")
+      .then((res) => setShoes(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
-  // const handleDelete = (id) => {
-  //   axios.delete(`http://localhost:3030/data_shoes/${id}`).then(() => {
-  //     // cập nhật lại state sau khi xóa sản phẩm thành công
-  //     const updatedShoes = shoes.filter((shoe) => shoe.id !== id);
-  //     setShoes(updatedShoes);
-  //   });
-  // };
   function handleDelete(id) {
     const confirm = window.confirm("Bạn có muốn xóa?");
     if (confirm) {
@@ -51,10 +45,9 @@ const ListShoes = () => {
                 {shoe.id}
               </td>
               <td>{shoe.name}</td>
-              <td>{shoe.shortdescription}</td>
-              <td>{shoe.price}</td>
+              <td>{shoe.shortdescription} </td>
+              <td>{shoe.price}$</td>
               <td>
-                {" "}
                 <img
                   src={shoe.image}
                   alt={shoe.image}
@@ -65,9 +58,9 @@ const ListShoes = () => {
                 <Link to={`/edit/${shoe.id}`}>
                   <i class="fa-solid fa-pen-to-square"></i>
                 </Link>
-                <button onClick={() => handleDelete(shoe.id)}>
+                <Link onClick={() => handleDelete(shoe.id)}>
                   <i class="fa-solid fa-trash"></i>
-                </button>
+                </Link>
               </td>
             </tr>
           ))}
@@ -75,6 +68,6 @@ const ListShoes = () => {
       </table>
     </div>
   );
-};
+}
 
 export default ListShoes;

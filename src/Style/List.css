@@ -18,5 +18,9 @@
     width: 90%;
 }
 .btn-action{
-    display: flex;
+    
+}
+.fa-trash{
+    color: #f41b0b;
+    padding-left: 15px;
 }

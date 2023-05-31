@@ -5,9 +5,7 @@ import ListShoe from "./View/ListShoe";
 import CreateShoe from "./components/CreateShoe";
 import EditShoe from "./components/EditShoe";
 import Nav from "./Nav/Nav";
-import ShoeDetail from "./View/ShoeDetail";
 import HomeShoe from "./View/HomeShoe";
-import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -16,12 +14,11 @@ function App() {
         <header className="App-header">
           <Nav />
           <Routes>
-            <Route path="/" exact element={<HomeShoe />}></Route>
+            <Route path="/" element={<HomeShoe />}></Route>
             <Route path="/list" element={<ListShoe />}></Route>
-            <Route path="/cart" element={<Cart />}></Route>
+
             <Route path="/create" element={<CreateShoe />}></Route>
             <Route path="/edit/:id" element={<EditShoe />} />
-            <Route path="/shoes/:id" element={<ShoeDetail />} />
           </Routes>
         </header>
       </div>

@@ -6,18 +6,13 @@ function Nav() {
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <NavLink to="/" activeClassName="active" exact={true}>
+          <NavLink to="/" activeClassName="active">
             Home
           </NavLink>
         </li>
         <li class="nav-item">
           <NavLink to="/list" activeClassName="active">
             List
-          </NavLink>
-        </li>
-        <li class="nav-item">
-          <NavLink to="/cart" activeClassName="active">
-            Cart
           </NavLink>
         </li>
         <li class="nav-item">
